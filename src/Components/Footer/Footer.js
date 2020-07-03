@@ -71,6 +71,20 @@ class Footer extends Component {
           >
             <div className="footerItem">Информация о компании</div>
           </NavLink>
+            <NavLink
+                to={"/map"}
+                exact
+                style={{
+                    textDecoration: "none",
+                    color: "rgb(32, 32, 34)"
+                }}
+                activeStyle={{
+                    color: "#4282ad",
+                    textDecoration: "underline"
+                }}
+            >
+                <div className="footerItem">Мы на карте</div>
+            </NavLink>
         </div>
         <div>
           <div

@@ -10,7 +10,7 @@ import Order from "./Components/Order/Order";
 import Login from "./Components/Login/Login";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import Footer from "./Components/Footer/Footer";
-
+import Maps from './Components/Maps/Maps.jsx'
 class App extends Component {
   render() {
     return (
@@ -24,6 +24,7 @@ class App extends Component {
               <Route path="/" exact component={ProductList} />
               <Route path="/details/:id" component={Details} />
               <Route path="/login" component={Login} />
+              <Route path='/map' component={Maps}/>
               <ProtectedRoute path="/order" component={Order} />
               <Route
                 component={() => (
