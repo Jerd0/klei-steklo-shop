@@ -39,9 +39,9 @@ class ConnectedItem extends Component {
             >
               {this.props.item.name}
             </div>
-            <div style={{ margin: 5 }}>Price: {this.props.item.price} $</div>
+            <div style={{ margin: 5 }}>Цена: {this.props.item.price} ₽</div>
             <div style={{ color: "#1a9349", fontWeight: "bold", margin: 5 }}>
-              {this.props.item.popular && "Popular"}
+              {this.props.item.popular && "Популярно"}
             </div>
           </CardContent>
         </CardActionArea>

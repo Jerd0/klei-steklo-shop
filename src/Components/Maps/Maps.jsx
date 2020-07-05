@@ -1,4 +1,3 @@
-import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import React from "react";
 const { compose, withProps, withState, withHandlers } = require("recompose");

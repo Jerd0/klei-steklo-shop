@@ -6,7 +6,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Badge from "@material-ui/core/Badge";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { withRouter } from "react-router-dom";
+import {NavLink, withRouter} from "react-router-dom";
 import { connect } from "react-redux";
 import { showCartDlg, toggleMenu, logout } from "../../Redux/Actions";
 import cartImage from "../../Images/logo2.png";
@@ -51,6 +51,31 @@ class ConnectedHeader extends Component {
         position="static"
         style={{ backgroundColor: "#FAFAFB", padding: 10 }}
       >
+        <selection style={{color:'black', textAlign:'center', marginRight:'1%'}}>Наш телефон:
+          <a style={{
+          color: "black",
+          textDecoration: "none",
+          marginRight:'1%'
+        }} href="tel:+7-950-675-76-07"> +7-950-675-76-07</a>
+          Наши адреса:
+          <NavLink
+              to={"/map"}
+              exact
+              style={{
+                textDecoration: "none",
+                color: "rgb(32, 32, 34)"
+              }}
+              activeStyle={{
+                color: "#4282ad",
+                textDecoration: "none"
+              }}
+          >
+          <div style={{
+            marginLeft:'1%',
+            marginRight:'1%'
+          }} >Черняховского, 15;   пр-т. Ленинский, 26</div>
+          </NavLink>
+        </selection>
         <Toolbar>
           <div className="left-part">
             <IconButton
