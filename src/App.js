@@ -26,13 +26,13 @@ class App extends Component {
           <AwesomeSlider
               animation="fallAnimation"
               cssModule={[CoreStyles, AnimationStyles]}
-              style={{maxWidth:'80%', marginBottom:'5%', marginLeft:'10%'}}
+              style={{maxWidth:'100%', marginBottom:'5%', marginTop:'1%'}}
           >
-              <div> <img
-                  style={{maxWidth:'100%', maxHeight:'80%' }}
-                  src={MAIN1} alt={'Клеим Стёкла'} /></div>
-              <div> <img style={{maxWidth:'100%', maxHeight:'80%'}} src={MAIN2} alt={'Клеим Стёкла'} /></div>
-              <div> <img style={{maxWidth:'100%', maxHeight:'80%'}} src={MAIN3} alt={'Клеим Стёкла'} /></div>
+              <div><img
+                  style={{maxWidth:'100%', maxHeight:'100%' }}
+                  src={MAIN1} alt={'Клеим стёлка'}/></div>
+              <div> <img style={{maxWidth:'100%', maxHeight:'100%'}} alt={'Клеим стёлка'} src={MAIN2} /></div>
+              <div> <img style={{maxWidth:'100%', maxHeight:'100%'}}  alt={'Клеим стёлка'} src={MAIN3} /></div>
           </AwesomeSlider>
         <div className="app-body">
           <Menu />
