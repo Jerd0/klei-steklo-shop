@@ -16,7 +16,6 @@ import Person from "@material-ui/icons/PersonOutline";
 import Avatar from "@material-ui/core/Avatar";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import Select from "@material-ui/core/Select";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 
@@ -27,14 +26,6 @@ const mapStateToProps = state => {
   };
 };
 
-// Option items for product categories.
-const categoryOptions = categories.map(x => {
-  return (
-    <MenuItem key={x.name} value={x.name}>
-      {x.name}
-    </MenuItem>
-  );
-});
 
 class ConnectedHeader extends Component {
   state = {
@@ -49,7 +40,7 @@ class ConnectedHeader extends Component {
     return (
       <AppBar
         position="static"
-        style={{ backgroundColor: "#FAFAFB", padding: 10}}
+        style={{ backgroundColor: "#FAFAFB", padding: 10, minWidth:"820", width:'100%'}}
       >
         <Toolbar >
           <div className="left-part">
@@ -64,7 +55,7 @@ class ConnectedHeader extends Component {
                 to={"/"}
                 exact
                >
-            <img src={cartImage} alt={"Logo"} style={{ marginLeft: 10, width:'60%' }}/>
+            <img src={cartImage} alt={"Logo"} style={{ marginLeft: '30%', width:'60%' }}/>
             </NavLink>
             <TextField
               label="Поиск продукции"
@@ -72,7 +63,7 @@ class ConnectedHeader extends Component {
               onChange={e => {
                 this.setState({ searchTerm: e.target.value });
               }}
-              style={{ marginLeft: 30, width: 250 }}
+              style={{ marginLeft: 30, width: 550 }}
             />
 
             <Button
@@ -171,7 +162,13 @@ class ConnectedHeader extends Component {
           textDecoration: "none",
           marginLeft:'2.5%'
         }}>
+          <NavLink
+              to={"/map"}
+              exact
+              style={{textDecoration: "none",
+              color:'black'}} >
           Наш адрес: Черняховского 15
+          </NavLink>
         </div>
       </AppBar>
     );

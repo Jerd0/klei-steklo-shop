@@ -2,7 +2,6 @@ html,
 #root,
 body {
   height: 100%;
-  margin: 0px;
 }
 
 body {
@@ -13,17 +12,22 @@ body {
   min-height: 100%;
   flex-direction: column;
   display: flex;
+  width: 100%;
   min-width: 820px;
 }
 
 .app-body {
   display: flex;
   flex: 1;
+  margin-left: 2%;
+  margin-right: 5%;
 }
 
 .content {
   position: relative;
   flex: 1;
+
+  margin-right: 5%;
 }
 
 .circular {
