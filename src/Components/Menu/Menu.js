@@ -22,7 +22,6 @@ const mapStateToProps = state => {
 class ConnectedMenu extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       // initially item with id 1 is expanded
       expandedMenuItems: {

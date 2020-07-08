@@ -4,11 +4,10 @@ import * as CONSTANTS from "./Constants";
 const initialState = {
   cartItems: [],
   showCartDialog: false,
-  showMenu: true,
+  showMenu: false,
   checkedOutItems: [],
   loggedInUser: null
 };
-
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case CONSTANTS.ADD_ITEM_IN_CART: {

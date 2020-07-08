@@ -8,7 +8,8 @@
 
 .right-part {
     display: flex;
-    width:150px;
+    flex:2;
+    width:100%;
     align-items: center;
     justify-content: flex-end;
 

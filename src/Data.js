@@ -16,7 +16,7 @@ const sampleProducts = [
   {
     id: 2,
     name: "Casio F-91W-1XY",
-    category: "Аксессуары",
+    category: "Чехлы",
     price: 101,
     description:
       "Shaped in an iconic casio design, this watch features a digital display, stopwatch and an LED backlight. The watch is housed in a durable resin case. Suitable for everyday styling.",
@@ -30,7 +30,7 @@ const sampleProducts = [
   {
     id: 3,
     name: "Seiko Silvertone Black Dial Solar Calendar Watch",
-    category: "Аксессуары",
+    category: "Чехлы",
     price: 200,
 
     popular: false,
@@ -42,7 +42,7 @@ const sampleProducts = [
   {
     id: 4,
     name: "Harry Potter",
-    category: "Зарядки",
+    category: "Кабели и Зарядки",
     price: 102,
     description:
       "Harry Potter is an ordinary boy who lives in a cupboard under the stairs at his Aunt Petunia" +
@@ -59,7 +59,7 @@ const sampleProducts = [
   {
     id: 5,
     name: "DELL SE2717HR",
-    category: "Computers",
+    category: "Дополнительные аксессуары",
     price: 102,
     description:
       "Amazing angles: Share consistent high-color fidelity with In-Plane Switching (IPS) technology across a 27-inch diagonal screen. A stunning vantage point for everyone, from almost anywhere" +
@@ -75,7 +75,7 @@ const sampleProducts = [
   {
     id: 7,
     name: "Swatch Skin",
-    category: "Аксессуары",
+    category: "Чехлы",
     price: 200,
     description: "",
     popular: false,
@@ -98,7 +98,7 @@ const sampleProducts = [
   {
     id: 9,
     name: "Bluetooth Keyboard, Vive Comb Rechargeable",
-    category: "Computers",
+    category: "Дополнительные аксессуары",
     price: 55,
     description: "",
     popular: false,
@@ -109,7 +109,7 @@ const sampleProducts = [
   {
     id: 10,
     name: "Swatch Blue Suit Mens Watch YGS747 Wrist Watch",
-    category: "Аксессуары",
+    category: "Чехлы",
     price: 120,
     description: "",
 
@@ -121,7 +121,7 @@ const sampleProducts = [
   {
     id: 11,
     name: "DELL 23 S2340L 1920X1080 FULL HD",
-    category: "Computers",
+    category: "Дополнительные аксессуары",
     price: 220,
     description:
       "This Certified Refurbished product is tested and certified to look and work like new. The refurbishing process includes functionality testing, basic cleaning, inspection, and repackaging. The product ships with all relevant accessories, a minimum 90-day warranty, and may arrive in a generic box. Only select sellers who maintain a high performance bar may offer Certified Refurbished products on Amazon.com",
@@ -133,7 +133,7 @@ const sampleProducts = [
   {
     id: 12,
     name: "Invicta Men's Pro Diver Collection Watch -Black",
-    category: "Аксессуары",
+    category: "Чехлы",
     price: 130,
     description:
       "Water resistant to 200 m (660 ft): In general, suitable for professional marine activity and serious surface water sports, but not scuba diving",
@@ -157,17 +157,17 @@ const categories = [
     icon: "smartphone"
   },
   {
-    name: "Аксессуары",
-    icon: "watch"
+    name: "Чехлы",
+    icon: "books"
   },
   {
-    name: "Зарядки",
+    name: "Кабели и Зарядки",
     icon: "settings_input_hdmi"
   },
-  // {
-  //   name: "Computers",
-  //   icon: "computer"
-  // }
+  {
+    name: "Дополнительные аксессуары",
+    icon: "headset"
+  }
 ];
 
 // Data for rendering menu.

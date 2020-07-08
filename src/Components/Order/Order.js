@@ -24,7 +24,7 @@ class ConnectedOrder extends Component {
 
     return (
       <div style={{ padding: 10 }}>
-        <div style={{ fontSize: 24, marginTop: 10 }}>Order summary</div>
+        <div style={{ fontSize: 24, marginTop: 10 }}>Товары в корзине</div>
         <Table>
           <TableHead>
             <TableRow>
@@ -76,7 +76,7 @@ class ConnectedOrder extends Component {
           }}
           style={{ margin: 5, marginTop: 30 }}
         >
-          Discard
+          Сбросить
         </Button>
       </div>
     );

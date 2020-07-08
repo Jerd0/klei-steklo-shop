@@ -52,10 +52,10 @@ class ConnectedCartDialog extends Component {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>Item name</TableCell>
-                  <TableCell>Price</TableCell>
-                  <TableCell>Quantity</TableCell>
-                  <TableCell>Action</TableCell>
+                  <TableCell>Название</TableCell>
+                  <TableCell>Цена</TableCell>
+                  <TableCell>Количество</TableCell>
+                  <TableCell>Действие</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -73,7 +73,7 @@ class ConnectedCartDialog extends Component {
               }}
             >
               {" "}
-              Total Price: {totalPrice} $
+              Сумма: {totalPrice} $
             </div>
             <Button
               variant="outlined"
@@ -85,7 +85,7 @@ class ConnectedCartDialog extends Component {
                 this.props.history.push("/order");
               }}
             >
-              Checkout
+              Оплатить(нет)
             </Button>
           </div>
         </Dialog>

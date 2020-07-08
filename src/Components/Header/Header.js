@@ -6,7 +6,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Badge from "@material-ui/core/Badge";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import {NavLink, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import { connect } from "react-redux";
 import { showCartDlg, toggleMenu, logout } from "../../Redux/Actions";
 import cartImage from "../../Images/logo2.png";
@@ -49,41 +49,16 @@ class ConnectedHeader extends Component {
     return (
       <AppBar
         position="static"
-        style={{ backgroundColor: "#FAFAFB", padding: 10 }}
+        style={{ backgroundColor: "#FAFAFB", padding: 10}}
       >
-        <selection style={{color:'black', textAlign:'center', marginRight:'1%'}}>Наш телефон:
-          <a style={{
-          color: "black",
-          textDecoration: "none",
-          marginRight:'1%'
-        }} href="tel:+7-950-675-76-07"> +7-950-675-76-07</a>
-          Наши адреса:
-          <NavLink
-              to={"/map"}
-              exact
-              style={{
-                textDecoration: "none",
-                color: "rgb(32, 32, 34)"
-              }}
-              activeStyle={{
-                color: "#4282ad",
-                textDecoration: "none"
-              }}
-          >
-          <div style={{
-            marginLeft:'1%',
-            marginRight:'1%'
-          }} >Черняховского, 15;   пр-т. Ленинский, 26</div>
-          </NavLink>
-        </selection>
-        <Toolbar>
+        <Toolbar >
           <div className="left-part">
             <IconButton
               onClick={() => {
                 this.props.dispatch(toggleMenu());
               }}
-            >
-              <MenuIcon size="small" />
+            >Меню
+              {/*<MenuIcon size="large" />*/}
             </IconButton>
 
             <img src={cartImage} alt={"Logo"} style={{ marginLeft: 10, width:'7%' }}/>
@@ -93,9 +68,8 @@ class ConnectedHeader extends Component {
               onChange={e => {
                 this.setState({ searchTerm: e.target.value });
               }}
-              style={{ marginLeft: 30, width: 250, marginBottom: 15 }}
+              style={{ marginLeft: 30, width: 250 }}
             />
-
             <Select
               style={{ maxWidth: 200, marginLeft: 20 }}
               value={this.state.categoryFilterValue}
@@ -112,7 +86,7 @@ class ConnectedHeader extends Component {
             </Select>
 
             <Button
-              style={{ marginLeft: 20 }}
+              style={{ marginLeft: '1%', marginRight: '1%' }}
               variant="outlined"
               color="primary"
               onClick={() => {
@@ -129,10 +103,11 @@ class ConnectedHeader extends Component {
             </Button>
           </div>
           <div className="right-part">
+
             {!this.props.loggedInUser ? (
               <Button
                 variant="outlined"
-                style={{ marginRight: 20 }}
+                style={{marginLeft: '1%'}}
                 color="primary"
                 onClick={() => {
                   this.props.history.push("/login");
@@ -189,6 +164,22 @@ class ConnectedHeader extends Component {
             </Menu>
           </div>
         </Toolbar>
+        <div className="left-part" style={{
+          color: "black",
+          textDecoration: "none",
+        }}>
+          Наш телефон:
+          <a style={{
+            color:'black',
+            textDecoration: "none",
+          }} href="tel:+7-950-675-76-07">+7-950-675-76-07;</a>
+        </div>
+        <div className="left-part" style={{
+          color: "black",
+          textDecoration: "none",
+        }}>
+          Наш адрес: Черняховского 15
+        </div>
       </AppBar>
     );
   }

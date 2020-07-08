@@ -14,20 +14,19 @@ class Api {
     });
   }
 
-  sortByPrice(data, sortval) {
+  sortByName(data, sortval) {
     if (sortval !== "lh" && sortval !== "hl") return data;
 
     let items = [...data];
 
     if (sortval === "lh") {
-      items.sort((a, b) => a.price - b.price);
+      items.sort((a,b)=> (a.name>b.name)*2-1)
     } else {
-      items.sort((a, b) => b.price - a.price);
+      items.sort((a, b) => (b.name>a.name)*2-1);
     }
 
     return items;
   }
-
   searchItems({
     category = "popular",
     term = "",
@@ -66,7 +65,7 @@ class Api {
 
         let totalLength = data.length;
 
-        data = this.sortByPrice(data, sortValue);
+        data = this.sortByName(data, sortValue);
 
         data = data.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
