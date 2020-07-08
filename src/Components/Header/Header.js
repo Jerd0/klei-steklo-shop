@@ -3,6 +3,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./Header.css";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from '@material-ui/icons/Search';
 import Badge from "@material-ui/core/Badge";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -40,7 +41,7 @@ class ConnectedHeader extends Component {
     return (
       <AppBar
         position="static"
-        style={{ backgroundColor: "#FAFAFB", padding: 10, minWidth:"820", width:'100%'}}
+        style={{ backgroundColor: "#FAFAFB", padding: '1%', minWidth:"820", width:'100%', marginRight:'15%'}}
       >
         <Toolbar >
           <div className="left-part">
@@ -58,16 +59,16 @@ class ConnectedHeader extends Component {
             <img src={cartImage} alt={"Logo"} style={{ marginLeft: '30%', width:'60%' }}/>
             </NavLink>
             <TextField
-              label="Поиск продукции"
+              label="Поиск товара по каталогу"
               value={this.state.searchTerm}
               onChange={e => {
                 this.setState({ searchTerm: e.target.value });
               }}
-              style={{ marginLeft: 30, width: 550 }}
+              style={{ marginLeft: '1%', width: 500 }}
             />
 
             <Button
-              style={{ marginLeft: '1%', marginRight: '1%' }}
+              style={{ marginLeft: '1%', marginRight: '1%', color:'gray', borderColor:'#ababab'}}
               variant="outlined"
               color="primary"
               onClick={() => {
@@ -79,8 +80,7 @@ class ConnectedHeader extends Component {
                 );
               }}
             >
-              {" "}
-              Поиск
+              <SearchIcon size="default" />
             </Button>
           </div>
           <div className="right-part">
@@ -101,7 +101,7 @@ class ConnectedHeader extends Component {
                 onClick={event => {
                   this.setState({ anchorEl: event.currentTarget });
                 }}
-                style={{ backgroundColor: "#3f51b5", marginRight: 10 }}
+                style={{ backgroundColor: "#ababab", marginRight: '1%' }}
               >
                 <Person />
               </Avatar>
@@ -145,28 +145,28 @@ class ConnectedHeader extends Component {
             </Menu>
           </div>
         </Toolbar>
-        <div className="left-part" style={{
-          color: "black",
-          textDecoration: "none",
-          marginLeft:'2.5%'
+        <div className="right-part" style={{
+          color: "grey",
+          textDecoration: "none"
         }}>
           Наш телефон:
           <a style={{
-            color:'black',
+            color:'grey',
             textDecoration: "none",
-            marginLeft:'1%'
+            marginLeft:'1%',
+            marginRight:'3.5%'
           }} href="tel:+7-950-675-76-07">+7-950-675-76-07;</a>
         </div>
-        <div className="left-part" style={{
-          color: "black",
+        <div className="right-part" style={{
+          color: "grey",
           textDecoration: "none",
-          marginLeft:'2.5%'
         }}>
           <NavLink
               to={"/map"}
               exact
               style={{textDecoration: "none",
-              color:'black'}} >
+              color:'grey',
+                marginRight:'3.5%'}} >
           Наш адрес: Черняховского 15
           </NavLink>
         </div>

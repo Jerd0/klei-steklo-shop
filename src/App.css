@@ -2,11 +2,10 @@ html,
 #root,
 body {
   height: 100%;
+  font-family: Helvetica, Arial;
+  width: 100%;
 }
 
-body {
-  font-family: Helvetica, Arial;
-}
 
 .app {
   min-height: 100%;

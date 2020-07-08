@@ -21,11 +21,9 @@ class ProductsHeader extends Component {
     // Lot of values come from the query string.
     let sortValue = parsedQueryStr.sortValue || "lh";
     let keyword = parsedQueryStr.term;
-    let category = parsedQueryStr.category;
-
     let subtitle = (
       <div>
-        <span style={{ fontSize: 12, color: "gray" }}>
+        <span style={{ fontSize: 28, color: "gray" }}>
           {totalItemsCount +
             " результат" +
             (totalItemsCount === 1 ? " " : "ов ") +
@@ -35,7 +33,7 @@ class ProductsHeader extends Component {
           <span
             style={{
               fontWeight: "bold",
-              fontSize: 12,
+              fontSize: 28,
               color: "gray"
             }}
           >
@@ -64,7 +62,6 @@ class ProductsHeader extends Component {
         <div style={{ padding: 10, display: "flex", alignItems: "center" }}>
           <div style={{ flex: 1, fontSize: 24 }}>
 
-            <div>{category ? category : "Популярные продукты"}</div>
             {subtitle}
           </div>
           <Select
