@@ -132,16 +132,115 @@ const sampleProducts = [
   },
   {
     id: 12,
-    name: "Invicta Men's Pro Diver Collection Watch -Black",
-    category: "Чехлы",
+    name: "iPhone 11 3D",
+    category: "Защитные стёкла",
+    price: 500,
+    description:      "Стекло на iphone11",
+    popular: true,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphonexr.jpg",
+      ]
+  },
+  {
+    id: 13,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 500,
+    description:"Защитные стёкла",
+    popular: true,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+      ]
+  },
+  {
+    id: 14,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
     price: 130,
-    description:
-      "Water resistant to 200 m (660 ft): In general, suitable for professional marine activity and serious surface water sports, but not scuba diving",
-
+    description:"Защитные стёкла",
     popular: false,
     imageUrls: [
-      "https://images-na.ssl-images-amazon.com/images/I/71Wq1pmITgL._UY550_.jpg",
-      "https://cdn2.jomashop.com/media/catalog/product/i/n/invicta-mako-pro-diver-automatic-men_s-watch-8926.jpg"
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+    ]
+  },{
+    id: 15,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 130,
+    description:"Защитные стёкла",
+    popular: false,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+    ]
+  },{
+    id: 16,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 130,
+    description:"Защитные стёкла",
+    popular: false,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+    ]
+  },{
+    id: 17,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 130,
+    description:"Защитные стёкла",
+    popular: false,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+    ]
+  },{
+    id: 18,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 130,
+    description:"Защитные стёкла",
+    popular: false,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+    ]
+  },{
+    id: 19,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 130,
+    description:"Защитные стёкла",
+    popular: false,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+    ]
+  },{
+    id: 20,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 130,
+    description:"Защитные стёкла",
+    popular: false,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+    ]
+  },{
+    id: 21,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 130,
+    description:"Защитные стёкла",
+    popular: false,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
+    ]
+  },{
+    id: 22,
+    name: "iPhone 11 Pro 3D",
+    category: "Защитные стёкла",
+    price: 130,
+    description:"Защитные стёкла",
+    popular: false,
+    imageUrls: [
+      "https://klei-steklo.ru/static/img/iphoneX5d.jpg",
     ]
   }
 ];

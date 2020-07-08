@@ -73,7 +73,7 @@ class ProductList extends Component {
     }
 
     return (
-      <div style={{ height: "100%", display: "flex", flexDirection: "column", marginLeft:'8%'}}>
+      <div style={{ height: "100%", display: "flex", flexDirection: "column", marginLeft:'3%'}}>
         <ProductsHeader
           parsedQueryStr={parsedQueryStr}
           updateQueryStr={this.updateQueryStr}

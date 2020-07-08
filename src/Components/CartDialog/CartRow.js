@@ -32,7 +32,7 @@ const CartRow = props => {
           style={{ width: 40 }}
           value={item.quantity}
           onChange={e => {
-            let quantity = parseInt(e.target.value, 10);
+            let quantity = parseInt(e.target.value, 12);
             if (quantity < 0) return;
             props.dispatch(
               updateCartItemQnt({

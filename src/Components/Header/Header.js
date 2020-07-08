@@ -71,7 +71,7 @@ class ConnectedHeader extends Component {
               style={{ marginLeft: 30, width: 250 }}
             />
             <Select
-              style={{ maxWidth: 200, marginLeft: 20 }}
+              style={{ maxWidth: 300, marginLeft: 20 }}
               value={this.state.categoryFilterValue}
               MenuProps={{
                 style: {

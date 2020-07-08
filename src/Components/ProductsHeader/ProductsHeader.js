@@ -7,8 +7,9 @@ import AnimationStyles from "react-awesome-slider/src/styled/fall-animation/fall
 import MAIN1 from "../../Asserts/MAIN1.jpg";
 import MAIN2 from "../../Asserts/MAIN2.jpg";
 import MAIN3 from "../../Asserts/MAIN3.jpg";
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import AwesomeSlider from "react-awesome-slider";
-
+const AutoplaySlider = withAutoplay(AwesomeSlider);
 class ProductsHeader extends Component {
   state = {
     openPriceDialog: false
@@ -46,17 +47,20 @@ class ProductsHeader extends Component {
 
     return (
       <div>
-          <AwesomeSlider
+          <AutoplaySlider
+              play={true}
+              cancelOnInteraction={false} // should stop playing on user interaction
+              interval={6000}
               animation="fallAnimation"
               cssModule={[CoreStyles, AnimationStyles]}
-              style={{maxWidth:'96%', marginBottom:'5%', marginLeft:'2%'}}
+              style={{maxWidth:'96%', marginBottom:'5%', marginLeft:'2%', marginRight:'2%'}}
           >
               <div><img
                   style={{maxWidth:'100%', maxHeight:'100%' }}
                   src={MAIN1} alt={'Клеим стёлка'}/></div>
               <div> <img style={{maxWidth:'100%', maxHeight:'100%'}} alt={'Клеим стёлка'} src={MAIN2} /></div>
               <div> <img style={{maxWidth:'100%', maxHeight:'100%'}}  alt={'Клеим стёлка'} src={MAIN3} /></div>
-          </AwesomeSlider>
+          </AutoplaySlider>
         <div style={{ padding: 10, display: "flex", alignItems: "center" }}>
           <div style={{ flex: 1, fontSize: 24 }}>
 

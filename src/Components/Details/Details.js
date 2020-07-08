@@ -103,11 +103,11 @@ class ConnectedDetails extends Component {
                 fontSize: 16
               }}
             >
-              Price: {this.state.item.price} $
+              Цена: {this.state.item.price} ₽
             </div>
             {this.state.item.popular && (
               <div style={{ fontSize: 14, marginTop: 5, color: "#228B22" }}>
-                (Popular product)
+                (Популярный продукт)
               </div>
             )}
 
@@ -115,7 +115,7 @@ class ConnectedDetails extends Component {
               type="number"
               value={this.state.quantity}
               style={{ marginTop: 20, marginBottom: 10, width: 70 }}
-              label="Quantity"
+              label="Количество"
               inputProps={{ min: 1, max: 10, step: 1 }}
               onChange={e => {
                 this.setState({ quantity: parseInt(e.target.value) });

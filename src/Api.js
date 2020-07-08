@@ -31,24 +31,15 @@ class Api {
     category = "popular",
     term = "",
     sortValue = "lh",
-    itemsPerPage = 10,
-    usePriceFilter = "false",
-    minPrice = 0,
-    maxPrice = 1000,
+    itemsPerPage = 12,
+
     page = 1
   }) {
     // Turn this into a boolean
-    usePriceFilter = usePriceFilter === "true" && true;
 
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         let data = sampleProducts.filter(item => {
-          if (
-            usePriceFilter &&
-            (item.price < minPrice || item.price > maxPrice)
-          ) {
-            return false;
-          }
 
           if (category === "popular") {
             return item.popular;
