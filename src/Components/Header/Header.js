@@ -6,7 +6,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Badge from "@material-ui/core/Badge";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import {withRouter} from "react-router-dom";
+import {NavLink, withRouter} from "react-router-dom";
 import { connect } from "react-redux";
 import { showCartDlg, toggleMenu, logout } from "../../Redux/Actions";
 import cartImage from "../../Images/logo2.png";
@@ -57,11 +57,15 @@ class ConnectedHeader extends Component {
               onClick={() => {
                 this.props.dispatch(toggleMenu());
               }}
-            >Меню
-              {/*<MenuIcon size="large" />*/}
+            >
+              <MenuIcon size="large" />
             </IconButton>
-
-            <img src={cartImage} alt={"Logo"} style={{ marginLeft: 10, width:'7%' }}/>
+            <NavLink
+                to={"/"}
+                exact
+               >
+            <img src={cartImage} alt={"Logo"} style={{ marginLeft: 10, width:'60%' }}/>
+            </NavLink>
             <TextField
               label="Поиск продукции"
               value={this.state.searchTerm}
@@ -70,20 +74,6 @@ class ConnectedHeader extends Component {
               }}
               style={{ marginLeft: 30, width: 250 }}
             />
-            <Select
-              style={{ maxWidth: 300, marginLeft: 20 }}
-              value={this.state.categoryFilterValue}
-              MenuProps={{
-                style: {
-                  maxHeight: 500
-                }
-              }}
-              onChange={e => {
-                this.setState({ categoryFilterValue: e.target.value });
-              }}
-            >
-              {categoryOptions}
-            </Select>
 
             <Button
               style={{ marginLeft: '1%', marginRight: '1%' }}
@@ -167,16 +157,19 @@ class ConnectedHeader extends Component {
         <div className="left-part" style={{
           color: "black",
           textDecoration: "none",
+          marginLeft:'2.5%'
         }}>
           Наш телефон:
           <a style={{
             color:'black',
             textDecoration: "none",
+            marginLeft:'1%'
           }} href="tel:+7-950-675-76-07">+7-950-675-76-07;</a>
         </div>
         <div className="left-part" style={{
           color: "black",
           textDecoration: "none",
+          marginLeft:'2.5%'
         }}>
           Наш адрес: Черняховского 15
         </div>
