@@ -6,14 +6,22 @@
     align-items: center;
     margin-left: 2%;
 }
-
-.right-part {
+.middle-part {
     display: flex;
     flex:2;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4.5%;
+    margin-left: 4.5%;
+}
+.right-part {
+    display: flex;
+    flex:3;
     width:100%;
     align-items: center;
     justify-content: flex-end;
     margin-right: 1%;
 }
 
- 
+

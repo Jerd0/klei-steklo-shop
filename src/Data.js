@@ -59,7 +59,7 @@ const sampleProducts = [
   {
     id: 5,
     name: "DELL SE2717HR",
-    category: "Дополнительные аксессуары",
+    category: "Аксессуары",
     price: 102,
     description:
       "Amazing angles: Share consistent high-color fidelity with In-Plane Switching (IPS) technology across a 27-inch diagonal screen. A stunning vantage point for everyone, from almost anywhere" +
@@ -98,7 +98,7 @@ const sampleProducts = [
   {
     id: 9,
     name: "Bluetooth Keyboard, Vive Comb Rechargeable",
-    category: "Дополнительные аксессуары",
+    category: "Аксессуары",
     price: 55,
     description: "",
     popular: false,
@@ -121,7 +121,7 @@ const sampleProducts = [
   {
     id: 11,
     name: "DELL 23 S2340L 1920X1080 FULL HD",
-    category: "Дополнительные аксессуары",
+    category: "Аксессуары",
     price: 220,
     description:
       "This Certified Refurbished product is tested and certified to look and work like new. The refurbishing process includes functionality testing, basic cleaning, inspection, and repackaging. The product ships with all relevant accessories, a minimum 90-day warranty, and may arrive in a generic box. Only select sellers who maintain a high performance bar may offer Certified Refurbished products on Amazon.com",
@@ -248,7 +248,7 @@ const sampleProducts = [
 // List of item categories.
 const categories = [
   {
-    name: "Все категории",
+    name: "Все Товары",
     icon: "list"
   },
   {
@@ -264,17 +264,18 @@ const categories = [
     icon: "settings_input_hdmi"
   },
   {
-    name: "Дополнительные аксессуары",
+    name: "Аксессуары",
     icon: "headset"
   }
 ];
 
 // Data for rendering menu.
 const dataForTheMenu = [
-  { name: "Домой", url: "/", icon: "home", id: 0 },
+  // { name: "Домой", url: "/", icon: "home", id: 0 },
+
   {
     name: "Категории товаров",
-    id: 1,
+    id: 0,
     children: categories.map((x, i) => {
       return {
         name: x.name,
@@ -283,7 +284,10 @@ const dataForTheMenu = [
         icon: x.icon
       };
     })
-  }
+  },
+  { name: "Ремонт", url: "/repairs", icon: "build", id: 1 },
+  { name: "Как заказать", url: "/buy", icon: "store", id: 2 },
+  { name: "Контакты", url: "/map", icon: "room", id: 3 },
 ];
 
 export { sampleProducts, categories, dataForTheMenu };

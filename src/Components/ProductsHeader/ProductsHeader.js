@@ -48,7 +48,7 @@ class ProductsHeader extends Component {
         <AutoplaySlider
             play={true}
             cancelOnInteraction={false} // should stop playing on user interaction
-            interval={6000}
+            interval={5000}
             animation="fallAnimation"
             cssModule={[CoreStyles, AnimationStyles]}
             style={{maxWidth:'100%', marginBottom:'5%', marginLeft:'2%', marginRight:'2%'}}
