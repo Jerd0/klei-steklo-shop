@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./Header.css";
 import IconButton from "@material-ui/core/IconButton";
-// import MenuIcon from "@material-ui/icons/Menu";
 import PhoneIcon from '@material-ui/icons/Phone';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 import {Search} from '@material-ui/icons';
 import Badge from "@material-ui/core/Badge";
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import {NavLink, withRouter} from "react-router-dom";
 import { connect } from "react-redux";
@@ -22,6 +20,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import MenuIcon from "@material-ui/icons/Menu";
+import Input from "@material-ui/core/Input";
 
 
 const mapStateToProps = state => {
@@ -30,13 +29,6 @@ const mapStateToProps = state => {
     loggedInUser: state.loggedInUser
   };
 };
-// const categoryOptions = categories.map(x => {
-//   return (
-//       <MenuItem key={x.name} value={x.name}>
-//         {x.name}
-//       </MenuItem>
-//   );
-// });
 class ConnectedHeader extends Component {
   state = {
     searchTerm: "",
@@ -49,7 +41,7 @@ class ConnectedHeader extends Component {
     return (
       <AppBar className='AppBar'
         position="static"
-              style={{backgroundColor: '#FAFAFB'}}
+              style={{backgroundColor: '#FAFAFB', width:'100%'}}
       >
         <Toolbar >
           <div className="left-part">
@@ -58,7 +50,7 @@ class ConnectedHeader extends Component {
                 this.props.dispatch(toggleMenu());
               }}
             >
-              <MenuIcon size="small" />
+              <MenuIcon size="small" style={{color:'#Ff036a'}}/>
             </IconButton>
             <NavLink
                 to={"/"}
@@ -67,8 +59,9 @@ class ConnectedHeader extends Component {
                >
             <img src={cartImage} alt={"Logo"}/>
             </NavLink>
-            <TextField
-              label="Поиск товара по каталогу"
+            <Input id='left-part-input'
+                   disableUnderline={true}
+              placeholder="Поиск товара по каталогу"
               value={this.state.searchTerm}
               onChange={e => {
                 this.setState({ searchTerm: e.target.value });
@@ -86,11 +79,6 @@ class ConnectedHeader extends Component {
                   this.props.dispatch(toggleSlider());
                 }
               }}
-                style={{ marginLeft: '1%',
-                  width: 500,
-                  border:'2px solid #Ff036a',
-                  borderRadius:'0px 10px 0px 0px',
-                }}
               />
             <Button id='left-part-button'
               variant="outlined"
@@ -105,30 +93,15 @@ class ConnectedHeader extends Component {
                 this.props.dispatch(toggleSlider());
               }}
             >
-              <Search size="default" style={{color:'#Ff036a'}}/>
+              <Search size="default" style={{color:'#fff'}}/>
             </Button>
-            {/*<Select*/}
-            {/*    style={{ maxWidth: 200, marginLeft: 20 }}*/}
-            {/*    value={this.state.categoryFilterValue}*/}
-            {/*    MenuProps={{*/}
-            {/*      style: {*/}
-            {/*        maxHeight: 500*/}
-            {/*      }*/}
-            {/*    }}*/}
-            {/*    onChange={e => {*/}
-            {/*      this.setState({ categoryFilterValue: e.target.value });*/}
-            {/*    }}*/}
-            {/*>*/}
-            {/*  {categoryOptions}*/}
-            {/*</Select>*/}
           </div>
           <div className='middle-part'>
             <inform>
-              <p className="right-part">
-                <PhoneIcon/>
-                <a href="tel:+7-950-675-76-07">+7-950-675-76-07;</a>
+              <p>
+                <a href="tel:+7-950-675-76-07"><PhoneIcon/> +7 (950) 675-76-07;</a>
               </p>
-              <p className="right-part" style={{
+              <p style={{
                 color: "grey",
                 textDecoration: "none",
               }}>
@@ -138,9 +111,9 @@ class ConnectedHeader extends Component {
                     style={{textDecoration: "none",
                       color:'grey',
                       marginLeft:'1%',
-                      marginRight:'3.5%',
-                      width:170}} >
-                  <RoomOutlinedIcon/> Черняховского 15
+                      marginRight:'1%',
+                      width:200}} >
+                  <RoomOutlinedIcon />ул. Черняховского 15
                 </NavLink>
               </p>
             </inform>

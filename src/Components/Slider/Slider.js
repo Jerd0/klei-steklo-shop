@@ -8,9 +8,9 @@ import MAIN3 from "../../Asserts/MAIN3.jpg";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
 import AwesomeSlider from "react-awesome-slider";
 import CoreStyles from "react-awesome-slider/src/core/styles.scss";
-import {toggleSlider} from "../../Redux/Actions";
-import CloseIcon from '@material-ui/icons/Close';
-import IconButton from "@material-ui/core/IconButton";
+// import {toggleSlider} from "../../Redux/Actions";
+// import CloseIcon from '@material-ui/icons/Close';
+// import IconButton from "@material-ui/core/IconButton";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 const mapStateToProps = state => {
@@ -23,14 +23,14 @@ class SliderNew extends Component{
         if (!this.props.showSlider) return null;
         return (
             <div>
-                <IconButton
-                    style={{marginLeft:'95%'}}
-                    onClick={() => {
-                        this.props.dispatch(toggleSlider());
-                    }}
-                >
-                    <CloseIcon size="small" alt='Закрыть'/>
-                </IconButton>
+                {/*<IconButton*/}
+                {/*    style={{marginLeft:'95%'}}*/}
+                {/*    onClick={() => {*/}
+                {/*        this.props.dispatch(toggleSlider());*/}
+                {/*    }}*/}
+                {/*>*/}
+                {/*    <CloseIcon size="small" alt='Закрыть'/>*/}
+                {/*</IconButton>*/}
             <AutoplaySlider
                 play={true}
                 cancelOnInteraction={false} // should stop playing on user interaction

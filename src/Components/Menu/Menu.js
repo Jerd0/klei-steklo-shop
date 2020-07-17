@@ -12,6 +12,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Collapse from "@material-ui/core/Collapse";
+import {toggleSlider} from "../../Redux/Actions";
 
 const mapStateToProps = state => {
   return {
@@ -87,6 +88,7 @@ class ConnectedMenu extends Component {
                   onClick={() => {
                     // Update in state which menu items are expanded.
                     this.setState(ps => {
+                      this.props.dispatch(toggleSlider());
                       return {
                         expandedMenuItems: {
                           ...ps.expandedMenuItems,

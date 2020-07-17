@@ -39,7 +39,7 @@ const rootReducer = (state = initialState, action) => {
     case CONSTANTS.TOGGLE_MENU:
       return { ...state, showMenu: !state.showMenu };
     case CONSTANTS.TOGGLE_SLIDER:
-      return {...state, showSlider: !state.showSlider};
+      return {...state, showSlider: false};
     case CONSTANTS.SET_LOGGED_IN_USER:
       return { ...state, loggedInUser: action.payload };
     case CONSTANTS.LOGOUT:

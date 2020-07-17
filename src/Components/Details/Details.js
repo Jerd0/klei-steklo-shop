@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { addItemInCart } from "../../Redux/Actions";
+import {addItemInCart, toggleSlider} from "../../Redux/Actions";
 import Api from "../../Api";
 import Item from "../Item/Item";
 import { connect } from "react-redux";
@@ -33,6 +33,7 @@ class ConnectedDetails extends Component {
 
     // Make sure this component is still mounted before we set state..
     if (this.isCompMounted) {
+        this.props.dispatch(toggleSlider())
       this.setState({
         item,
         quantity: 1,
@@ -40,6 +41,7 @@ class ConnectedDetails extends Component {
         itemLoading: false
       });
     }
+
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
