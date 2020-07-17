@@ -11,6 +11,7 @@ import Login from "./Components/Login/Login";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import Footer from "./Components/Footer/Footer";
 import Maps from './Components/Maps/Maps.jsx'
+import Slider from "./Components/Slider/Slider";
 class App extends Component {
   render() {
     return (
@@ -18,7 +19,9 @@ class App extends Component {
         <Header />
         <div className="app-body">
           <Menu />
+
           <div className="content">
+            <Slider/>
             <CartDialog />
             <Switch>
               <Route path="/" exact component={ProductList} />

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./Header.css";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+// import MenuIcon from "@material-ui/icons/Menu";
 import PhoneIcon from '@material-ui/icons/Phone';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 import {Search} from '@material-ui/icons';
@@ -11,7 +11,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import {NavLink, withRouter} from "react-router-dom";
 import { connect } from "react-redux";
-import { showCartDlg, toggleMenu, logout } from "../../Redux/Actions";
+import {showCartDlg, toggleMenu, logout, toggleSlider} from "../../Redux/Actions";
 import cartImage from "../../Images/pink_logo(1).png";
 import Auth from "../../Auth";
 import { categories } from "../../Data";
@@ -21,6 +21,8 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import MenuIcon from "@material-ui/icons/Menu";
+
 
 const mapStateToProps = state => {
   return {
@@ -28,38 +30,42 @@ const mapStateToProps = state => {
     loggedInUser: state.loggedInUser
   };
 };
-
-
+// const categoryOptions = categories.map(x => {
+//   return (
+//       <MenuItem key={x.name} value={x.name}>
+//         {x.name}
+//       </MenuItem>
+//   );
+// });
 class ConnectedHeader extends Component {
   state = {
     searchTerm: "",
     anchorEl: null,
     categoryFilterValue: categories[0].name
   };
-
   render() {
     let { anchorEl } = this.state;
 
     return (
-      <AppBar
+      <AppBar className='AppBar'
         position="static"
-        style={{ backgroundColor: "#FAFAFB", padding: '1%', minWidth:"820", width:'100%', marginRight:'15%'}}
+              style={{backgroundColor: '#FAFAFB'}}
       >
         <Toolbar >
           <div className="left-part">
-            {/*<IconButton*/}
-            {/*  onClick={() => {*/}
-            {/*    this.props.dispatch(toggleMenu());*/}
-            {/*  }}*/}
-            {/*>*/}
-            {/*  <MenuIcon size="large" />*/}
-            {/*</IconButton>*/}
+            <IconButton
+              onClick={() => {
+                this.props.dispatch(toggleMenu());
+              }}
+            >
+              <MenuIcon size="small" />
+            </IconButton>
             <NavLink
                 to={"/"}
                 exact
-                style={{width:'20%'}}
+                style={{width:'20%', minWidth:90}}
                >
-            <img src={cartImage} alt={"Logo"} style={{ width:'100%'}}/>
+            <img src={cartImage} alt={"Logo"}/>
             </NavLink>
             <TextField
               label="Поиск товара по каталогу"
@@ -77,16 +83,16 @@ class ConnectedHeader extends Component {
                       this.state.searchTerm
                   );
                   ev.preventDefault();
+                  this.props.dispatch(toggleSlider());
                 }
               }}
-              style={{ marginLeft: '1%',
-                width: 500,
-                border:'2px solid #Ff036a',
-                borderRadius:'0px 10px 0px 0px',
-              }}
+                style={{ marginLeft: '1%',
+                  width: 500,
+                  border:'2px solid #Ff036a',
+                  borderRadius:'0px 10px 0px 0px',
+                }}
               />
-            <Button
-              style={{ marginLeft: '1%', marginRight: '1%', color:'gray',padding:12, border:'2px solid #Ff036a'}}
+            <Button id='left-part-button'
               variant="outlined"
               color="primary"
               onClick={() => {
@@ -96,24 +102,31 @@ class ConnectedHeader extends Component {
                     "&term=" +
                     this.state.searchTerm
                 );
+                this.props.dispatch(toggleSlider());
               }}
             >
               <Search size="default" style={{color:'#Ff036a'}}/>
             </Button>
+            {/*<Select*/}
+            {/*    style={{ maxWidth: 200, marginLeft: 20 }}*/}
+            {/*    value={this.state.categoryFilterValue}*/}
+            {/*    MenuProps={{*/}
+            {/*      style: {*/}
+            {/*        maxHeight: 500*/}
+            {/*      }*/}
+            {/*    }}*/}
+            {/*    onChange={e => {*/}
+            {/*      this.setState({ categoryFilterValue: e.target.value });*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*  {categoryOptions}*/}
+            {/*</Select>*/}
           </div>
           <div className='middle-part'>
             <inform>
-              <p className="right-part" style={{
-                color: "grey"
-              }}>
+              <p className="right-part">
                 <PhoneIcon/>
-                <a style={{
-                  color:'grey',
-                  textDecoration: "none",
-                  marginLeft:'1%',
-                  marginRight:'3.5%',
-                  // width:160
-                }} href="tel:+7-950-675-76-07">+7-950-675-76-07;</a>
+                <a href="tel:+7-950-675-76-07">+7-950-675-76-07;</a>
               </p>
               <p className="right-part" style={{
                 color: "grey",

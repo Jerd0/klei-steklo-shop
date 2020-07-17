@@ -248,7 +248,7 @@ const sampleProducts = [
 // List of item categories.
 const categories = [
   {
-    name: "Все Товары",
+    name: "Все товары",
     icon: "list"
   },
   {
@@ -268,10 +268,14 @@ const categories = [
     icon: "headset"
   }
 ];
-
+const navigation= [
+  { name: "Домой", url: "/", icon: "home", id: 0 },
+  { name: "Ремонт", url: "/repairs", icon: "build", id: 1 },
+  { name: "Как заказать", url: "/buy", icon: "store", id: 2 },
+  { name: "Контакты", url: "/map", icon: "room", id:3 },
+];
 // Data for rendering menu.
 const dataForTheMenu = [
-  // { name: "Домой", url: "/", icon: "home", id: 0 },
 
   {
     name: "Категории товаров",
@@ -285,9 +289,18 @@ const dataForTheMenu = [
       };
     })
   },
-  { name: "Ремонт", url: "/repairs", icon: "build", id: 1 },
-  { name: "Как заказать", url: "/buy", icon: "store", id: 2 },
-  { name: "Контакты", url: "/map", icon: "room", id: 3 },
+  {
+    name: 'Навигация',
+    id:1,
+    children: navigation.map((x,i)=>{
+      return{
+        name: x.name,
+        id: i,
+        url: x.url,
+        icon: x.icon
+      };
+    })
+  },
 ];
 
 export { sampleProducts, categories, dataForTheMenu };

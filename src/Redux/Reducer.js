@@ -5,6 +5,7 @@ const initialState = {
   cartItems: [],
   showCartDialog: false,
   showMenu: true,
+  showSlider:true,
   checkedOutItems: [],
   loggedInUser: null
 };
@@ -37,6 +38,8 @@ const rootReducer = (state = initialState, action) => {
       };
     case CONSTANTS.TOGGLE_MENU:
       return { ...state, showMenu: !state.showMenu };
+    case CONSTANTS.TOGGLE_SLIDER:
+      return {...state, showSlider: !state.showSlider};
     case CONSTANTS.SET_LOGGED_IN_USER:
       return { ...state, loggedInUser: action.payload };
     case CONSTANTS.LOGOUT:

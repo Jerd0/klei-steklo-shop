@@ -31,8 +31,7 @@ class Api {
     category = "popular",
     term = "",
     sortValue = "lh",
-    itemsPerPage = 12,
-
+    itemsPerPage = 10,
     page = 1
   }) {
     // Turn this into a boolean
@@ -45,7 +44,7 @@ class Api {
             return item.popular;
           }
 
-          if (category !== "Все категории" && category !== item.category)
+          if (category !== "Все товары" && category !== item.category)
             return false;
 
           if (term && !item.name.toLowerCase().includes(term.toLowerCase()))

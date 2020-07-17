@@ -16,6 +16,10 @@ export const toggleMenu = () => ({
   type: CONSTANTS.TOGGLE_MENU,
   payload: null
 });
+export const toggleSlider=()=>({
+  type: CONSTANTS.TOGGLE_SLIDER,
+  payload:null
+});
 export const updateCartItemQnt = obj => ({
   type: CONSTANTS.UPDATE_CART_ITEM_QUANTITY,
   payload: obj

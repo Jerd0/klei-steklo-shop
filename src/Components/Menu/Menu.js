@@ -44,7 +44,8 @@ class ConnectedMenu extends Component {
     return item.url === location.pathname;
   }
 
-  renderMenu(data) {
+  renderMenu(data)
+  {
     return (
       <List>
         {data.map((x, i) => {
@@ -68,7 +69,7 @@ class ConnectedMenu extends Component {
               >
                 <ListItem dense button>
                   <ListItemIcon>
-                    <Icon>{x.icon}}</Icon>
+                    <Icon>{x.icon}</Icon>
                   </ListItemIcon>
                   <ListItemText
                     disableTypography
@@ -95,7 +96,7 @@ class ConnectedMenu extends Component {
                     });
                   }}
                 >
-                  <ListItemText primary={x.name} />
+                  <ListItemText primary={x.name}  />
                   {this.state.expandedMenuItems[x.id] ? (
                     <ExpandLess />
                   ) : (

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./ProductList.css";
 import Item from "../Item/Item";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import queryString from "query-string";
@@ -73,14 +74,14 @@ class ProductList extends Component {
     }
 
     return (
-      <div style={{ height: "100%", display: "flex", flexDirection: "column", marginLeft:'3%'}}>
+      <div style={{flexDirection: "column", marginLeft:'3%'}}>
         <ProductsHeader
           parsedQueryStr={parsedQueryStr}
           updateQueryStr={this.updateQueryStr}
           totalItemsCount={this.state.totalItemsCount}
         />
 
-        <div style={{ flex: 1 }}>
+        <div className='exp' style={{ flex: 1}}>
           {this.state.items.map(item => {
             return <Item key={item.id} item={item} />;
           })}
